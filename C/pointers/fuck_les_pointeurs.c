@@ -1,30 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Je mets le prototype en haut. Comme c'est un tout
-petit programme je ne le mets pas dans un .h, mais
-en temps normal (dans un vrai programme), j'aurais placé
-le prototype dans un fichier .h bien entendu */
+void test(int *myNumbers, int size);
 
-void decoupeMinutes(int *heures, int *minutes);
-
-int main(int argc, char *argv[])
+int main()
 {
-    int heures = 0, minutes = 90;
+    int myNumbers[] = {1, 2, 3, 4};
+    int size = sizeof(myNumbers) / sizeof(myNumbers[0]);
 
-    /* On a une variable minutes qui vaut 90.
-    Après appel de la fonction, je veux que ma variable
-    "heures" vaille 1 et que ma variable "minutes" vaille 30 */
-
-    decoupeMinutes(&heures, &minutes);
-
-    printf("%d heures et %d minutes\n", heures, minutes);
-
+    test(myNumbers, size);
     return 0;
 }
 
-void decoupeMinutes(int *heures, int *minutes)
+void test(int *myNumbers, int size)
 {
-    *heures = *minutes / 60;  // 90 / 60 = 1
-    *minutes = *minutes % 60; // 90 % 60 = 30
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\n", myNumbers[i]);
+    }
 }
