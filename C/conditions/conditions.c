@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+double aireRectangle(double largeur, double hauteur);
+
 int menu()
 {
     int choix = 0;

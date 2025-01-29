@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Matrix Color Changer",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "images/color_change.png"
+    }
+  }
